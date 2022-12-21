@@ -1706,6 +1706,15 @@ luatele = 'deleteFile',
 file_id = file_id
 }
 end
+
+function luatele_function.revokeChatInviteLink(chat_id,name)
+return function_core.run_table{
+luatele = 'revokeChatInviteLink',
+chat_id = chat_id,
+invite_link = tostring(name),
+}
+end
+
 function luatele_function.generateChatInviteLink(chat_id,name,expire_date,member_limit)
 return function_core.run_table{
 luatele = 'createChatInviteLink',
