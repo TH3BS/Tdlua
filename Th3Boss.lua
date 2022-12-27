@@ -604,6 +604,7 @@ text = value.text,
 type = {
 query = value.query,
 luatele = 'inlineKeyboardButtonTypeSwitchInline',
+in_current_chat = value.in_current_chat or 0
 }
 }
 end
@@ -1578,7 +1579,8 @@ can_manage_video_chats = right[9] or 0,
 is_anonymous = right[10] or 0,
 can_manage_chat = right[11] or 0,
 can_promote_members = right[12] or 0,
-custom_title = tostring(right[13]) or ''
+custom_title = tostring(right[13]) or '',
+can_manage_topics = right[14] or 0
 }
 elseif status == 'member' then
 chat_member_status = {
@@ -1634,7 +1636,8 @@ can_manage_video_chats = right[9] or 1,
 is_anonymous = right[10] or 1,
 can_manage_chat = right[11] or 1,
 can_promote_members = right[12] or 0,
-custom_title = tostring(right[13]) or ''
+custom_title = tostring(right[13]) or '',
+can_manage_topics = right[14] or 0
 }
 return function_core.run_table{
 luatele = 'setChatMemberStatus',
